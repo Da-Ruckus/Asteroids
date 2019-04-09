@@ -27,8 +27,8 @@ public class Ship extends Keyboard {
 	
 	}
 
-	double shipX = 150;
-	double shipY = 275;
+	double shipX = 300;
+	double shipY = 550;
 
 	int edge = 280;
 	

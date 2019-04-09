@@ -18,13 +18,13 @@ public class Window extends Application {
 	
 public void start(Stage stage) {
     	
-    	Canvas canvas = new Canvas(300,300);//sets canvas that game is on
+    	Canvas canvas = new Canvas(600,600);//sets canvas that game is on
 		BorderPane game = new BorderPane();
 		game.setCenter(canvas);
     
 		GraphicsContext gc = canvas.getGraphicsContext2D();
 		
-    	Scene scene = new Scene(game,300,300,Color.BLACK );//sets Window size
+    	Scene scene = new Scene(game,600,600,Color.BLACK );//sets Window size
     	scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> this.key.KeyboardInput(key, gc));
 		scene.addEventHandler(KeyEvent.KEY_RELEASED, (key) -> this.key.KeyboardInput(key, gc));
 		
@@ -57,13 +57,11 @@ public void start(Stage stage) {
 			@Override
 			public void handle(long now) {
 
-				
-				
-				
 				gc.clearRect(0, 0, gc.getCanvas().getWidth(), gc.getCanvas().getHeight());
 				ship.draw(gc);
 				ship.update(key, gc);
-				
+				ships.draw(gc);
+				ships.update(key, gc);
 				}
 
 			}.start();
@@ -74,6 +72,7 @@ public void start(Stage stage) {
 
 Keyboard key = new Keyboard();
 Ship ship = new Ship();
+Enemyship ships = new Enemyship();
 
 
 }
