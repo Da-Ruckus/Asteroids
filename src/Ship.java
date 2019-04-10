@@ -30,9 +30,9 @@ public class Ship extends Keyboard {
 	double shipX = 300;
 	double shipY = 550;
 
-	int edge = 280;
+	int edge = 560;
 	
-	int firstedge = 20;
+	int firstedge = 40;
 	
 	public void update(Keyboard key,GraphicsContext gc) {
 		

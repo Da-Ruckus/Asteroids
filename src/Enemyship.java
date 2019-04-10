@@ -115,7 +115,6 @@ public Enemyship (){
 	// Next row of ships
 	
 	
-	
 	double shipX22 = 75;
 
 	double shipY22 = 110;
@@ -153,46 +152,159 @@ public Enemyship (){
 			
 		 int height= (int) gc.getCanvas().getHeight();
 			
-			System.out.println(number);
+		//	System.out.println(number);
 
 		
 			// Update
-	/*		if (right == true) {
+			if (right == true) {
 				shipX++;
 				}
 
 			else {
 				left = true;
-				X--;
+				shipX--;
+			}
+
+					
+////////////   ship2X   ////////////		
+			if (right == true) {
+				ship2X++;
+				}
+
+			else {
+				left = true;
+				ship2X--;
+			}
+
+
+////////////   ship3X   ////////////			
+			if (right == true) {
+				ship3X++;
+				}
+
+			else {
+				left = true;
+				ship3X--;
 			}
 
 			
-		
-//////////////////////////////////// 
 			
-			if(Y <= 0 ) {
-				down=true;
-				up=false;
+////////////   ship4X   ////////////			
+			if (right == true) {
+				ship4X++;
+				}
+
+			else {
+				left = true;
+				ship4X--;
 			}
-			if(Y >= height ) {
-				down=false;
-				up=true;
-			}
+
+	
+////////////////////  SET DOS  //////////////////////////////////			
 			
-			if( X <= 0 ) {
+			
+			// shipx22
+			if (right == true) {
+				shipX22++;
+				}
+
+			else {
+				left = true;
+				shipX22--;
+			}
+
+					
+////////////   ship23X   ////////////		
+			if (right == true) {
+				shipX23++;
+				}
+
+			else {
+				left = true;
+				shipX23--;
+			}
+
+
+////////////   shipX34   ////////////			
+			if (right == true) {
+				shipX34++;
+				}
+
+			else {
+				left = true;
+				shipX34--;
+			}
+
+			
+			
+////////////   shipX45   ////////////			
+			if (right == true) {
+				shipX45++;
+				}
+
+			else {
+				left = true;
+				shipX45--;
+			}
+
+
+			
+			
+			
+			
+			
+			
+//////////////  ShipX  ///////////// 
+			
+			if( shipX <= 0 ) {
 				right=true;
 				left=false;
 			}
 			
-			if(X >= width ) {
+			if(shipX >= width ) {
 				right=false;
 				left=true;
-			*/
+				}
+////////////   Ship2X  ///////////// 	
+			
+			if( ship2X <= 0 ) {
+				right=true;
+				left=false;
 			}
-	
-	
-	
-	
+			
+			if(ship2X >= width ) {
+				right=false;
+				left=true;
+			
+			}
+////////////  Ship3X  /////////////
+			
+			if( ship3X <= 0 ) {
+				right=true;
+				left=false;
+			}
+			
+			if(ship3X >= width ) {
+				right=false;
+				left=true;
+			
+			}
+
+			
+////////////   Ship4X  /////////////
+			
+			if( ship4X <= 0 ) {
+				right=true;
+				left=false;
+			}
+			
+			if(ship4X >= width ) {
+				right=false;
+				left=true;
+			
+			}
+
+	}
 	
 	
 	
