@@ -13,46 +13,25 @@ import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
 //import main.Keyboard;
 
-
 public class Window extends Application {
-	
-public void start(Stage stage) {
-    	
-    	Canvas canvas = new Canvas(600,600);//sets canvas that game is on
+
+	public void start(Stage stage) {
+
+		Canvas canvas = new Canvas(600, 600);// sets canvas that game is on
 		BorderPane game = new BorderPane();
 		game.setCenter(canvas);
-    
+
 		GraphicsContext gc = canvas.getGraphicsContext2D();
-		
-    	Scene scene = new Scene(game,600,600,Color.BLACK );//sets Window size
-    	scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> this.key.KeyboardInput(key, gc));
+
+		Scene scene = new Scene(game, 600, 600, Color.BLACK);// sets Window size
+		scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> this.key.KeyboardInput(key, gc));
 		scene.addEventHandler(KeyEvent.KEY_RELEASED, (key) -> this.key.KeyboardInput(key, gc));
-		
-        stage.setScene(scene);
-        stage.setTitle("Asteroids");
-        stage.show();
-    /*
-        
-        Group root = new Group();
-        Group g = new Group();
 
-        Polygon polygon = new Polygon();
-        polygon.getPoints().addAll(new Double[]{
-            0.0, 0.0,
-            20.0, 10.0,
-            10.0, 20.0 });
+		stage.setScene(scene);
+		stage.setTitle("Asteroids");
+		stage.show();
 
-        g.getChildren().add(polygon);
-
-        scene.setRoot(g);
-        stage.show();
-     */
-        
-        
-        
-        
-        
-        new AnimationTimer() {
+		new AnimationTimer() {
 
 			@Override
 			public void handle(long now) {
@@ -62,17 +41,14 @@ public void start(Stage stage) {
 				ship.update(key, gc);
 				ships.draw(gc);
 				ships.update(key, gc);
-				}
+			}
 
-			}.start();
-        
-        
-    } // end start();
-    
+		}.start();
 
-Keyboard key = new Keyboard();
-Ship ship = new Ship();
-Enemyship ships = new Enemyship();
+	} // end start();
 
+	Keyboard key = new Keyboard();
+	Ship ship = new Ship();
+	Enemyship ships = new Enemyship();
 
 }

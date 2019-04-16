@@ -14,16 +14,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 import javafx.scene.text.Font;
 
-public class main  {
-	
-	
+public class main {
+
 	public static void main(String args[]) {
-		
+
 		Application.launch(Window.class, args);
 	}
 
-	
 }
-    
-
-
