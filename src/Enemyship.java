@@ -16,54 +16,80 @@ public class Enemyship {
 
 	}
 
+	boolean drawShip = true;
+	boolean drawShip2 = true;
+	boolean drawShip3 = true;
+	boolean drawShip4 = true;
+
 	boolean drawShip22 = true;
-	
+	boolean drawShip23 = true;
+	boolean drawShip34 = true;
+	boolean drawShip45 = true;
+
 	public void draw(GraphicsContext gc) {
 		gc.setFill(Color.WHITE);
 		gc.save();
 
-		double X[] = { shipX, shipX + 20, shipX - 20 };
-		double Y[] = { shipY + 20, shipY - 20, shipY - 20 };
-		gc.fillPolygon(X, Y, 3);
-		gc.restore();
+		if (drawShip) {
+			double X[] = { shipX, shipX + 20, shipX - 20 };//40
+			double Y[] = { shipY + 20, shipY - 20, shipY - 20 };//40
+			gc.fillPolygon(X, Y, 3);
+			gc.restore();
+			
+		}
 
-		double X2[] = { ship2X, ship2X + 20, ship2X - 20 };
-		double Y2[] = { ship2Y + 20, ship2Y - 20, ship2Y - 20 };
-		gc.fillPolygon(X2, Y2, 3);
-		gc.restore();
+		if (drawShip2) {
+			double X2[] = { ship2X, ship2X + 20, ship2X - 20 };
+			double Y2[] = { ship2Y + 20, ship2Y - 20, ship2Y - 20 };
+			gc.fillPolygon(X2, Y2, 3);
+			gc.restore();
+		}
 
-		double X3[] = { ship3X, ship3X + 20, ship3X - 20 };
-		double Y3[] = { ship3Y + 20, ship3Y - 20, ship3Y - 20 };
-		gc.fillPolygon(X3, Y3, 3);
-		gc.restore();
+		if (drawShip3) {
+			double X3[] = { ship3X, ship3X + 20, ship3X - 20 };
+			double Y3[] = { ship3Y + 20, ship3Y - 20, ship3Y - 20 };
+			gc.fillPolygon(X3, Y3, 3);
+			gc.restore();
+		}
 
-		double X4[] = { ship4X, ship4X + 20, ship4X - 20 };
-		double Y4[] = { ship4Y + 20, ship4Y - 20, ship4Y - 20 };
-		gc.fillPolygon(X4, Y4, 3);
-		gc.restore();
+		if (drawShip4) {
+			double X4[] = { ship4X, ship4X + 20, ship4X - 20 };
+			double Y4[] = { ship4Y + 20, ship4Y - 20, ship4Y - 20 };
+			gc.fillPolygon(X4, Y4, 3);
+			gc.restore();
+		}
 
-		if(drawShip22 ) {
-		
+		if (drawShip22) {
+
 			double X22[] = { shipX22, shipX22 + 20, shipX22 - 20 };
 			double Y22[] = { shipY22 + 20, shipY22 - 20, shipY22 - 20 };
 			gc.fillPolygon(X22, Y22, 3);
 			gc.restore();
 
 		}
-		double X23[] = { shipX23, shipX23 + 20, shipX23 - 20 };
-		double Y23[] = { shipY23 + 20, shipY23 - 20, shipY23 - 20 };
-		gc.fillPolygon(X23, Y23, 3);
-		gc.restore();
+		if (drawShip23) {
 
-		double X34[] = { shipX34, shipX34 + 20, shipX34 - 20 };
-		double Y34[] = { shipY34 + 20, shipY34 - 20, shipY34 - 20 };
-		gc.fillPolygon(X34, Y34, 3);
-		gc.restore();
+			double X23[] = { shipX23, shipX23 + 20, shipX23 - 20 };
+			double Y23[] = { shipY23 + 20, shipY23 - 20, shipY23 - 20 };
+			gc.fillPolygon(X23, Y23, 3);
+			gc.restore();
+		}
 
-		double X45[] = { shipX45, shipX45 + 20, shipX45 - 20 };
-		double Y45[] = { shipY45 + 20, shipY45 - 20, shipY45 - 20 };
-		gc.fillPolygon(X45, Y45, 3);
-		gc.restore();
+		if (drawShip34) {
+
+			double X34[] = { shipX34, shipX34 + 20, shipX34 - 20 };
+			double Y34[] = { shipY34 + 20, shipY34 - 20, shipY34 - 20 };
+			gc.fillPolygon(X34, Y34, 3);
+			gc.restore();
+		}
+
+		if (drawShip45) {
+
+			double X45[] = { shipX45, shipX45 + 20, shipX45 - 20 };
+			double Y45[] = { shipY45 + 20, shipY45 - 20, shipY45 - 20 };
+			gc.fillPolygon(X45, Y45, 3);
+			gc.restore();
+		}
 
 	}
 
@@ -82,9 +108,11 @@ public class Enemyship {
 	double ship4X = 525;
 
 	double ship4Y = 50;
+	
 
 	// Next row of ships
 
+	
 	double shipX22 = 75;
 
 	double shipY22 = 110;
@@ -151,8 +179,10 @@ public class Enemyship {
 			ship4X--;
 		}
 
+		
 ////////////////////  SET SECOND ROW  //////////////////////////////////			
 
+		
 		// shipx22
 		if (right == true) {
 			shipX22++;
@@ -192,9 +222,11 @@ public class Enemyship {
 			left = true;
 			shipX45--;
 		}
+		
 
 //////////////  ShipX   Y axis      ///////////// 
 
+		
 		if (shipX <= 50) {
 			right = true;
 			left = false;
@@ -364,13 +396,6 @@ public class Enemyship {
 
 		}
 
-		
-		
-		
-		
-		
-		
-		
 	}
 
 }

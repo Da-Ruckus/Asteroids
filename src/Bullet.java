@@ -20,8 +20,7 @@ public class Bullet extends Keyboard {
 		// TODO Auto-generated method stub
 
 		gc.setFill(Color.RED);
-
-		gc.fillRoundRect(X, Y, 20, 20, 20, 20);
+		gc.fillRoundRect(X, Y, 20, 20, 20, 20);//10
 
 	}
 	// public boolean collision(Shape a) {
