@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -11,7 +13,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Polygon;
 import javafx.stage.Stage;
-//import main.Keyboard;
 
 public class Window extends Application {
 
@@ -41,6 +42,23 @@ public class Window extends Application {
 				ship.update(key, gc);
 				ships.draw(gc);
 				ships.update(key, gc);
+
+				
+				
+				
+				
+				if (key.space) {
+					Bullets.add(new Bullet(ship.shipX, ship.shipY));
+
+				}
+				Iterator<Bullet> iter = Bullets.iterator();
+				while (iter.hasNext()) {
+					Bullet temp = iter.next();
+					temp.update(key, gc);
+					temp.draw(gc);
+
+				}
+
 			}
 
 		}.start();
@@ -50,5 +68,5 @@ public class Window extends Application {
 	Keyboard key = new Keyboard();
 	Ship ship = new Ship();
 	Enemyship ships = new Enemyship();
-
+	List<Bullet> Bullets = new ArrayList<Bullet>();
 }

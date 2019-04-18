@@ -1,139 +1,39 @@
 import java.util.Random;
 
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
 
-public class Bullet {
-	
-	/////    example code    //////
-	
-	
-	
-/*	boolean down = false;
-	boolean up = false;
-	boolean left = false;
-	boolean right = false;
-	
-	
-	
-	
-	
-	int Y = 150;
-	int X = 150;
-	
-	int i = 0;
-	int j = 0;
-	
-	
-	
-	public Bullet (  ) {
-		
-		// Initial ball direction
-		
-		if (number == 1 && number != 2) {
-			down=true;
-		}
+public class Bullet extends Keyboard {
 
-		else {
-			up = true;
-			}
+	///// example code //////
 
-		if (number == 3 && number != 4) {
-			right=true;
-			}
+	double X, Y;
 
-		else {
-			left=true;
-			 }
+	public Bullet(double X, double Y) {
 
-		
+		this.X = X;
+		this.Y = Y;
+
 	}
-	
-	
-	
-	
-
-	Random generator = new Random();
-	int number = generator.nextInt(4) + 1;
 
 	public void draw(GraphicsContext gc) {
 		// TODO Auto-generated method stub
 
-//		gc.setFill(color);
+		gc.setFill(Color.RED);
+
 		gc.fillRoundRect(X, Y, 20, 20, 20, 20);
 
 	}
-//
-//	@Override
-//	public boolean collision(Shape a) {
-		// TODO Auto-generated method stub
-	//	return false;
-	//}
+	// public boolean collision(Shape a) {
+	// TODO Auto-generated method stub
+	// return false;
+	// }
 
-	@Override
-//	public void update(Keyboard key,GraphicsContext gc) {
+	public void update(Keyboard key, GraphicsContext gc) {
 
-	 int width =(int) gc.getCanvas().getWidth();
-		
-	 int height= (int) gc.getCanvas().getHeight();
-		
-		System.out.println(number);
+		// Update
+		Y--;
 
-	
-/*		// Update
-		if (down == true) {
-			Y++;
-			}
-
-		else {
-			up = true;
-			Y--;
-		}
-
-		if (left==true) {
-			X--;
-		}
-
-		else {
-			right = true;
-			X++;
-		}
-	
-		
-		// collision
-		
-		if(Y <= 0 ) {
-			down=true;
-			up=false;
-		}
-		if(Y >= height ) {
-			down=false;
-			up=true;
-		}
-		
-		if( X <= 0 ) {
-			right=true;
-			left=false;
-		}
-		
-		if(X >= width ) {
-			right=false;
-			left=true;
-		}
-	
-	
-		
-		
-		
-		
 	}
 
-
-}
-
-	
-	
-}
-
-
-*/
 }

@@ -2,7 +2,6 @@ import java.util.Random;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-//import main.Keyboard;
 
 public class Enemyship {
 
@@ -17,6 +16,8 @@ public class Enemyship {
 
 	}
 
+	boolean drawShip22 = true;
+	
 	public void draw(GraphicsContext gc) {
 		gc.setFill(Color.WHITE);
 		gc.save();
@@ -41,11 +42,14 @@ public class Enemyship {
 		gc.fillPolygon(X4, Y4, 3);
 		gc.restore();
 
-		double X22[] = { shipX22, shipX22 + 20, shipX22 - 20 };
-		double Y22[] = { shipY22 + 20, shipY22 - 20, shipY22 - 20 };
-		gc.fillPolygon(X22, Y22, 3);
-		gc.restore();
+		if(drawShip22 ) {
+		
+			double X22[] = { shipX22, shipX22 + 20, shipX22 - 20 };
+			double Y22[] = { shipY22 + 20, shipY22 - 20, shipY22 - 20 };
+			gc.fillPolygon(X22, Y22, 3);
+			gc.restore();
 
+		}
 		double X23[] = { shipX23, shipX23 + 20, shipX23 - 20 };
 		double Y23[] = { shipY23 + 20, shipY23 - 20, shipY23 - 20 };
 		gc.fillPolygon(X23, Y23, 3);
@@ -105,13 +109,7 @@ public class Enemyship {
 
 	public void update(Keyboard key, GraphicsContext gc) {
 
-	//	int width = (int) gc.getCanvas().getWidth();
-
 		int edge = 575;
-		
-//		int height = (int) gc.getCanvas().getHeight();
-
-		// System.out.println(number);
 
 		// Update
 		if (right == true) {
@@ -197,241 +195,175 @@ public class Enemyship {
 
 //////////////  ShipX   Y axis      ///////////// 
 
-		
-													//////  +50 on 	Y axis			
-		
-		
-		if (shipX <= 25) {
+		if (shipX <= 50) {
 			right = true;
 			left = false;
-			
+
 			if (right == true) {
-				shipY++;
+				shipY += 20;
 			}
-			
-			
-			
+
 		}
 
-		if (shipX >= 75) {
+		if (shipX >= 100) {
 			right = false;
 			left = true;
-			
+
 			if (left == true) {
-				shipY++;
+				shipY += 20;
 			}
-			
-			
-			
 		}
 ////////////   Ship2X  ///////////// 	
 
-		if (ship2X <= 25) {
+		if (ship2X <= 200) {
 			right = true;
 			left = false;
-			
+
 			if (right == true) {
-				ship2Y++;
+				ship2Y += 20;
 			}
-			
-			
-			
+
 		}
 
-		if (ship2X >= edge) {
+		if (ship2X >= 250) {
 			right = false;
 			left = true;
 
-			
 			if (left == true) {
-				ship2Y++;
+				ship2Y += 20;
 			}
-			
-			
-			
-			
-			
+
 		}
 ////////////  Ship3X  /////////////
 
-		if (ship3X <= 25) {
+		if (ship3X <= 350) {
 			right = true;
 			left = false;
-			
+
 			if (right == true) {
-				ship3Y++;
+				ship3Y += 20;
 			}
-			
-			
+
 		}
 
-		if (ship3X >= edge) {
+		if (ship3X >= 400) {
 			right = false;
 			left = true;
 
 			if (left == true) {
-				ship3Y++;
+				ship3Y += 20;
 			}
-			
-			
-			
-			
+
 		}
 
 ////////////   Ship4X  /////////////
 
-		if (ship4X <= 25) {
+		if (ship4X <= 500) {// 25
 			right = true;
 			left = false;
-	
-		
+
 			if (right == true) {
-				ship4Y++;
+				ship4Y += 20;
 			}
-			
-		
-		
+
 		}
 
-		if (ship4X >= edge) {
+		if (ship4X >= 550) {// edge
 			right = false;
 			left = true;
 
-			
-			
 			if (left == true) {
-				ship4Y++;
+				ship4Y += 20;
 			}
-			
-			
-			
-			
-			
+
 		}
 
-		
-		
-		
 ////////////// ShipX22   Y axis      ///////////// 
 
-		
-		
-if (shipX22 <= 25) {
-	right = true;
-	left = false;
-	
-	if (right == true) {
-		shipY22++;
-	}
-	
-	
-	
-}
+		if (shipX22 <= 50) {
+			right = true;
+			left = false;
 
-if (shipX22 >= edge) {
-	right = false;
-	left = true;
-	
-	if (left == true) {
-		shipY22++;
-	}
-	
-	
-	
-}
-////////////ShipX23     Y axis     ///////////// 	
+			if (right == true) {
+				shipY22 += 20;
+			}
 
-if (shipX23 <= 25) {
-	right = true;
-	left = false;
-	
-	if (right == true) {
-		shipY23++;
-	}
-	
-	
-	
-}
+		}
 
-if (shipX23 >= edge) {
-	right = false;
-	left = true;
+		if (shipX22 >= 100) {
+			right = false;
+			left = true;
 
-	
-	if (left == true) {
-		shipY23++;
-	}
-	
-	
-	
-	
-	
-}
-////////////ShipX34       Y axis      /////////////
+			if (left == true) {
+				shipY22 += 20;
+			}
 
-if (shipX34 <= 25) {
-	right = true;
-	left = false;
-	
-	if (right == true) {
-		shipY34++;
-	}
-	
-	
-}
+		}
+		//////////// ShipX23 Y axis ////// 225 ////
 
-if (shipX34 >= edge) {
-	right = false;
-	left = true;
+		if (shipX23 <= 200) {
+			right = true;
+			left = false;
 
-	if (left == true) {
-		shipY34++;
-	}
-	
-	
-	
-	
-}
+			if (right == true) {
+				shipY23 += 20;
+			}
 
-////////////ShipX45       Y axis    /////////////
+		}
 
-if (shipX45 <= 25) {
-	right = true;
-	left = false;
+		if (shipX23 >= 250) {
+			right = false;
+			left = true;
 
+			if (left == true) {
+				shipY23 += 20;
+			}
 
-	if (right == true) {
-		shipY45++;
-	}
-	
+		}
+		//////////// ShipX34 Y axis ///// 375 //////
 
+		if (shipX34 <= 350) {
+			right = true;
+			left = false;
 
-}
+			if (right == true) {
+				shipY34 += 20;
+			}
 
-if (shipX45 >= edge) {
-	right = false;
-	left = true;
+		}
 
-	
-	
-	if (left == true) {
-		shipY45++;
-	}
-	
-	
-	
-	
-	
-}
+		if (shipX34 >= 400) {
+			right = false;
+			left = true;
 
-		
-		
-		
-		
-		
-		
-		
-		
+			if (left == true) {
+				shipY34 += 20;
+			}
+
+		}
+
+		//////////// ShipX45 Y axis ////// 525 /////
+
+		if (shipX45 <= 500) {
+			right = true;
+			left = false;
+
+			if (right == true) {
+				shipY45 += 20;
+			}
+
+		}
+
+		if (shipX45 >= 550) {
+			right = false;
+			left = true;
+
+			if (left == true) {
+				shipY45 += 20;
+			}
+
+		}
+
 		
 		
 		
